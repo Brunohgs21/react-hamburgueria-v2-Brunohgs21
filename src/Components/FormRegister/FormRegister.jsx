@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, DivForm } from "./index";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -7,8 +7,10 @@ import PWDRequisite from "../../PWDRequisite/index";
 import { useOutClick } from "./../../hooks/useOutclick";
 import { toast } from "react-toastify";
 import "react-toastify/ReactToastify.css";
+import { UserContext } from "./../../Context/UserContext";
 
 const FormRegister = () => {
+  const { registerUser } = useContext(UserContext);
   const {
     register,
     handleSubmit,
@@ -18,7 +20,6 @@ const FormRegister = () => {
   });
 
   function onSubmit(data) {
-    console.log(data);
     if (data.confirmation === data.password) {
       const { name, email, password } = data;
       const user = {
@@ -26,6 +27,7 @@ const FormRegister = () => {
         email: email,
         password: password,
       };
+      registerUser(user);
     } else {
       toast.error("As senhas são diferentes");
     }

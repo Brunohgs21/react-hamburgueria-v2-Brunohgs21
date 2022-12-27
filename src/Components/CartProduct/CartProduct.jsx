@@ -4,13 +4,6 @@ import { CartContext } from "./../../Context/CartContext";
 
 const CartProduct = ({ item }) => {
   const { remove } = useContext(CartContext);
-  // function remove() {
-  //   let filtro = cart.filter((value, index) => {
-  //     return value.name != item.name;
-  //   });
-
-  //   setCart(() => [...filtro]);
-  // }
 
   function removeItem() {
     remove(item);

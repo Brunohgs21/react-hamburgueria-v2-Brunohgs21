@@ -4,10 +4,10 @@ import { useContext } from "react";
 import { UserContext } from "./../../Context/UserContext";
 const Input = ({ setFiltro }) => {
   const { register, handleSubmit } = useForm();
-  const { user } = useContext(UserContext);
+  const { food } = useContext(UserContext);
 
   function saveSearch(data) {
-    let produtosFiltrados = user.filter((produto) => {
+    let produtosFiltrados = food.filter((produto) => {
       let categoriaInput = produto.category
         .toLowerCase()
         .includes(data.search.toLowerCase());
@@ -24,16 +24,19 @@ const Input = ({ setFiltro }) => {
   }
 
   return (
-    <Div>
-      <form onSubmit={handleSubmit(saveSearch)}>
-        <input
-          type="text"
-          placeholder="Digitar Pesquisa"
-          {...register("search")}
-        />
-        <button>Pesquisar</button>
-      </form>
-    </Div>
+    <div>
+      <button onClick={() => setFiltro(food)}>Todos</button>
+      <Div>
+        <form onSubmit={handleSubmit(saveSearch)}>
+          <input
+            type="text"
+            placeholder="Digitar Pesquisa"
+            {...register("search")}
+          />
+          <button>Pesquisar</button>
+        </form>
+      </Div>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Div } from "./../InputSearch/index";
+import { Div } from "../InputSearch/index";
 
 export const Cabecalho = styled.header`
   width: 100vw;

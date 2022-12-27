@@ -1,7 +1,7 @@
 import Header from "../../Components/Header/index.jsx";
 import ProductsList from "../../Components/ProductsList/index.jsx";
-import Cart from "../../Components/Cart/index.jsx";
-import { Div } from "../../index";
+import Cart from "../../Components/Cart/index.tsx";
+import { Div } from "../../index.ts";
 import { useState } from "react";
 
 const Main = () => {

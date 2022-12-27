@@ -17,6 +17,7 @@ const ProductsList = ({ filtro }) => {
     }
     getList();
   }, []);
+  console.log(list);
 
   return list.length > 0 ? (
     <List>

@@ -1,4 +1,4 @@
-import { Cabecalho } from "./index.js";
+import { Cabecalho } from "./index.ts";
 import logo from "../../Assets/logo.jpg";
 import Input from "../InputSearch/index.jsx";
 import CartImg from "../../Assets/cart.png.png";
