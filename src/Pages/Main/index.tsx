@@ -3,10 +3,17 @@ import ProductsList from "../../Components/ProductsList/ProductList";
 import Cart from "../../Components/Cart/Cart";
 import { Div } from "../../index";
 import { useState } from "react";
+interface IProduct {
+  category: string;
+  id: number;
+  img: string;
+  name: string;
+  price: number;
+}
 
 const Main = () => {
   const [openCart, setOpenCart] = useState(false);
-  const [filtro, setFiltro] = useState();
+  const [filtro, setFiltro] = useState([] as IProduct[]);
 
   return (
     <>

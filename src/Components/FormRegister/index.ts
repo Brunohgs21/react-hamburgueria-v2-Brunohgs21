@@ -7,13 +7,10 @@ export const Link = styled(LinkRouter)`
   font-weight: 500;
   font-size: 14px;
   line-height: 22px;
-  /* identical to box height, or 157% */
 
   text-decoration-line: underline;
 
-  /* Gray 3 */
-
-  color: #828282;
+  color: var(--color-grey-3);
 `;
 
 export const Div = styled.div`
@@ -26,6 +23,10 @@ export const Div = styled.div`
   @media (max-width: 700px) {
     flex-direction: column;
     gap: 1rem;
+
+    img {
+      width: 80%;
+    }
   }
 `;
 
@@ -34,15 +35,18 @@ export const DivForm = styled.div`
   flex-direction: column;
   width: 500px;
 
-  background: #ffffff;
-  /* grey-0 */
+  background: var(--color-white);
 
-  border: 2px solid #f5f5f5;
+  border: 2px solid var(--color-grey-1);
   border-radius: 5px;
   padding: 33px 24px 28px 24px;
   .relative {
     position: relative;
     margin-bottom: 0;
+  }
+  .schemaText {
+    color: var(--color-grey-4);
+    font-family: "Inter", sans-serif;
   }
   form {
     display: flex;
@@ -51,9 +55,11 @@ export const DivForm = styled.div`
   }
   div {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 20px;
+
+    font-family: "Inter", sans-serif;
   }
 
   h1 {
@@ -64,7 +70,11 @@ export const DivForm = styled.div`
     line-height: 24px;
     /* or 133% */
 
-    color: #333333;
+    color: var(--color-grey-dark);
+  }
+  .schemaText {
+    color: var(--color-grey-4);
+    font-family: "Inter", sans-serif;
   }
 
   label {
@@ -76,25 +86,25 @@ export const DivForm = styled.div`
     font-weight: 400;
     font-size: 12px;
     line-height: 15px;
-    /* identical to box height */
-    background-color: #ffffff;
 
-    color: #999999;
-    margin-left: 40px;
+    background-color: var(--color-white);
+
+    color: var(--color-grey-4);
+    margin-left: 2.5rem;
     position: absolute;
     left: 0;
-    bottom: 51px;
+    bottom: 3.1875rem;
     text-align: center;
   }
 
   input {
-    background: #ffffff;
-    border: 2px solid #168821;
-    border-radius: 8px;
-    height: 60px;
+    background: var(--color-white);
+    border: 0.125rem solid var(--color-main-3);
+    border-radius: 0.5rem;
+    height: 3.75rem;
     width: 100%;
-    padding-left: 15px;
-    margin-top: 15px;
+    padding-left: 0.9375rem;
+    margin-top: 0.9375rem;
   }
 
   .nameDiv {
@@ -110,44 +120,52 @@ export const DivForm = styled.div`
   }
 
   button {
-    padding: 0px 40px;
-    gap: 10px;
+    padding: 0rem 2.5rem;
+    gap: 0.625rem;
 
-    height: 60px;
-    margin-top: 15px;
+    height: 3.75rem;
+    margin-top: 0.9375rem;
 
-    background: #f5f5f5;
-    border-radius: 8px;
+    background: var(--color-grey-2);
+    border-radius: 0.5rem;
     border: transparent;
 
     font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
-    line-height: 28px;
-    /* identical to box height, or 175% */
+    font-size: 1rem;
+    line-height: 1.75rem;
 
     text-align: center;
 
-    /* Gray 3 */
-
-    color: #828282;
+    color: var(--color-grey-3);
+    &:hover {
+      color: var(--color-grey-1);
+      background-color: var(--color-grey-3);
+      border: 0.0625rem solid var(--color-grey-dark);
+      transition: 0.5s ease;
+    }
   }
 
   .btnLogin {
     height: 60px;
-    background: #219653;
+    background: var(--color-main-2);
     border-radius: 8px;
     font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 28px;
-    /* identical to box height, or 175% */
 
     text-align: center;
 
-    color: #ffffff;
+    color: var(--color-white);
+    &:hover {
+      color: var(--color-main);
+      background-color: var(--color-white);
+      border: 1px solid var(--color-main);
+      transition: 0.5s ease;
+    }
   }
   #confirmation {
     margin-top: 0;
@@ -160,34 +178,48 @@ export const DivForm = styled.div`
     margin-bottom: 0;
   }
   .p {
-    margin-top: 20px;
-    width: 327px;
+    margin-top: 1.25rem;
+    width: 20.4375rem;
     font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
-    line-height: 18px;
-    /* or 129% */
+    line-height: 1.125rem;
 
     text-align: center;
 
-    /* grey-50 */
-
-    color: #999999;
+    color: var(--color-grey-4);
   }
   @media (max-width: 700px) {
     width: 90%;
+    input {
+      height: 2.1875rem;
+    }
+    label {
+      bottom: 1.6875rem;
+    }
+
+    button {
+      height: 2.1875rem;
+    }
+    .btnLogin {
+      height: 2.1875rem;
+    }
+    .headerDiv {
+      display: flex;
+      flex-direction: column;
+    }
   }
 `;
 
 export const DivCheck = styled.div`
   position: absolute;
-  background: #f5f5f5;
+  background: var(--color-grey-1);
   width: 100%;
 
   border-radius: 0.5rem;
   padding: 0.3125rem;
-  top: -15px;
+  top: -0.9375rem;
   display: flex;
   flex-direction: column;
 
@@ -195,31 +227,37 @@ export const DivCheck = styled.div`
     display: none;
   }
   .invalid {
-    color: black;
+    color: var(--color-grey-4);
   }
 `;
 
 export const Link2 = styled(LinkRouter)`
   width: 100%;
-  height: 60px;
+  height: 3.75rem;
 
-  background: #f5f5f5;
+  background: var(--color-grey-1);
   border-radius: 8px;
 
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 28px;
-  /* identical to box height, or 175% */
+  font-size: 1rem;
+  line-height: 1.75rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  margin-top: 20px;
+  margin-top: 1.25rem;
 
-  /* Gray 3 */
-
-  color: #828282;
+  color: var(--color-grey-3);
+  &:hover {
+    color: var(--color-grey-1);
+    background-color: var(--color-grey-3);
+    border: 0.0625rem solid var(--color-grey-dark);
+    transition: 0.5s ease;
+  }
+  @media (max-width: 700px) {
+    height: 2.1875rem;
+  }
 `;

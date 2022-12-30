@@ -1,5 +1,15 @@
 import styled from "styled-components";
 
+export const TodosBtn = styled.img`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  height: 1.5rem;
+  width: 1.5rem;
+`;
+
 export const Div = styled.div`
   display: flex;
   flex-direction: row;
@@ -10,9 +20,9 @@ export const Div = styled.div`
   width: 22.8125rem;
   height: 3.75rem;
 
-  background: #ffffff;
-  /* grey-100 */
-  border: 0.125rem solid #e0e0e0;
+  background: var(--color-white);
+
+  border: 0.125rem solid var(--color-grey-2);
   border-radius: 0.5rem;
 
   form {
@@ -33,21 +43,23 @@ export const Div = styled.div`
     width: 6.6875rem;
     height: 2.5rem;
 
-    /* color-primary */
+    background: var(--color-main);
 
-    background: #27ae60;
-    /* color-primary */
-
-    border: 0.125rem solid #27ae60;
+    border: 0.125rem solid var(--color-main);
     border-radius: 0.5rem;
 
     font-style: normal;
     font-weight: 500;
     font-size: 0.875rem;
     line-height: 1.0625rem;
-    /* identical to box height */
 
-    color: #ffffff;
+    color: var(--color-white);
+    &:hover {
+      color: var(--color-main);
+      background-color: var(--color-white);
+      border: 1px solid var(--color-main);
+      transition: 0.5s ease;
+    }
   }
 
   input {
@@ -60,9 +72,7 @@ export const Div = styled.div`
     font-size: 1rem;
     line-height: 1.1875rem;
 
-    /* grey-100 */
-
-    color: #e0e0e0;
+    color: var(--color-grey-2);
   }
 
   @media (max-width: 700px) {

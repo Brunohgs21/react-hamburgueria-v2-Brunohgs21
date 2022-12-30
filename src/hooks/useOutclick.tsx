@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef, useEffect } from "react";
 
-export const useOutClick = (callback: () => void) => {
+export const useOutClick = (callback: () => void, parametro: 1 | 2) => {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -9,12 +9,15 @@ export const useOutClick = (callback: () => void) => {
       const target = event.target;
       const element = ref.current;
 
-      if (
-        (element.contains(target) && target.name != "password") ||
-        target.tagName == "BUTTON"
-      ) {
-        callback();
-      } else {
+      if (parametro == 1) {
+        if (element.contains(target) && target.name != "password") {
+          callback();
+        }
+      }
+      if (parametro == 2) {
+        if (element.contains(target) && target.tagName == "SECTION") {
+          callback();
+        }
       }
     }
 

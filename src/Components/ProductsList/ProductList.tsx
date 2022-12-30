@@ -1,5 +1,5 @@
 import React from "react";
-import { List } from "./index";
+import { List, Loading } from "./index";
 import { useState, useEffect } from "react";
 import { api } from "../../Services/api";
 import Product from "../Product/Product";
@@ -12,7 +12,7 @@ interface IProduct {
   price: number;
 }
 interface IProductListProps {
-  filtro: IProduct[] | undefined | [];
+  filtro: IProduct[] | [];
 }
 
 const ProductsList = ({ filtro }: IProductListProps) => {
@@ -22,7 +22,7 @@ const ProductsList = ({ filtro }: IProductListProps) => {
     async function getList() {
       try {
         const response = await api.get("products");
-        console.log(response);
+
         setList(response.data);
       } catch (error) {
         console.log(error);
@@ -33,12 +33,12 @@ const ProductsList = ({ filtro }: IProductListProps) => {
 
   return list.length > 0 ? (
     <List>
-      {filtro == undefined
+      {filtro.length == 0
         ? list?.map((item) => <Product item={item}></Product>)
         : filtro.map((item) => <Product item={item}></Product>)}
     </List>
   ) : (
-    <p>Carregando nossas delícias</p>
+    <Loading>Carregando nossas delícias...</Loading>
   );
 };
 

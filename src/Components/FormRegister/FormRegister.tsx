@@ -54,7 +54,7 @@ const FormRegister = () => {
     pwdLengthCheck: false,
     specialCharCheck: false,
   });
-  const clickRef = useOutClick(() => setPWDRequisite(false));
+  const clickRef = useOutClick(() => setPWDRequisite(false), 1);
   function handleOnFocus() {
     setPWDRequisite(true);
   }
@@ -75,7 +75,7 @@ const FormRegister = () => {
 
   return (
     <DivForm ref={clickRef}>
-      <div>
+      <div className="headerDiv">
         <h1>Cadastro</h1>
         <Link to="/">Retornar para o login</Link>
       </div>

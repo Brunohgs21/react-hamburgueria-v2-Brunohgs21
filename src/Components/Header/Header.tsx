@@ -16,7 +16,7 @@ interface IProduct {
 }
 
 interface IHeaderProps {
-  setFiltro: IProduct[] | [] | undefined;
+  setFiltro: Dispatch<SetStateAction<IProduct[] | []>>;
   setOpenCart: Dispatch<SetStateAction<boolean>>;
 }
 
@@ -31,7 +31,7 @@ const Header = ({ setFiltro, setOpenCart }: IHeaderProps) => {
 
   return (
     <Cabecalho>
-      <img src={logo} alt="" />
+      <img className="logo" src={logo} alt="" />
       <div>
         <Input setFiltro={setFiltro} />
         <button className="openCart" onClick={() => setOpenCart(true)}>

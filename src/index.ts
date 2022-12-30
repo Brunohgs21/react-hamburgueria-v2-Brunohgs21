@@ -11,7 +11,7 @@ export const Div = styled.div`
   header {
     width: 100%;
     height: 1.875rem;
-    background: #27ae60;
+    background: var(--color-main);
     display: flex;
     align-items: center;
     padding-left: 1.25rem;
@@ -20,16 +20,15 @@ export const Div = styled.div`
     font-weight: 700;
     font-size: 1.125rem;
     line-height: 1.5rem;
-    /* or 133% */
 
-    color: #ffffff;
+    color: var(--color-white);
   }
 
   @media (max-width: 700px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 50px;
-    padding-left: 10px;
+    padding-bottom: 3.125rem;
+    padding-left: 0.625rem;
   }
 `;

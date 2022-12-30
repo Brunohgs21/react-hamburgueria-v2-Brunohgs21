@@ -4,10 +4,9 @@ export const Li = styled.li`
   width: 15.625rem;
   height: 21.875rem;
 
-  background: #ffffff;
-  /* grey-100 */
+  background: var(--color-white);
 
-  border: 0.125rem solid #e0e0e0;
+  border: 0.125rem solid var(--color-grey-2);
   border-radius: 0.3125rem;
   display: flex;
   flex-direction: column;
@@ -29,11 +28,8 @@ export const Li = styled.li`
     font-weight: 600;
     font-size: 0.875rem;
     line-height: 1.5rem;
-    /* identical to box height, or 171% */
 
-    /* color-primary */
-
-    color: #27ae60;
+    color: var(--color-main);
 
     margin-left: 1.3125rem;
     margin-bottom: 0.875rem;
@@ -45,11 +41,8 @@ export const Li = styled.li`
     font-weight: 700;
     font-size: 1.125rem;
     line-height: 1.5rem;
-    /* or 133% */
 
-    /* grey-100 */
-
-    color: #333333;
+    color: var(--color-grey-dark);
 
     margin-top: 0.9375rem;
     margin-bottom: 0.9375rem;
@@ -62,11 +55,8 @@ export const Li = styled.li`
     font-weight: 400;
     font-size: 0.75rem;
     line-height: 1rem;
-    /* identical to box height, or 133% */
 
-    /* grey-300 */
-
-    color: #828282;
+    color: var(--color-grey-3);
 
     margin-left: 1.3125rem;
     margin-bottom: 0.875rem;
@@ -82,12 +72,9 @@ export const Li = styled.li`
     width: 6.625rem;
     height: 2.5rem;
 
-    /* color-primary */
+    background: var(--color-main);
 
-    background: #27ae60;
-    /* color-primary */
-
-    border: 0.125rem solid #27ae60;
+    border: 0.125rem solid var(--color-main);
     border-radius: 0.5rem;
 
     margin-left: 1.3125rem;
@@ -97,9 +84,14 @@ export const Li = styled.li`
     font-weight: 600;
     font-size: 0.875rem;
     line-height: 1.0625rem;
-    /* identical to box height */
 
-    color: #ffffff;
+    color: var(--color-white);
+    &:hover {
+      color: var(--color-main);
+      background-color: var(--color-white);
+      border: 1px solid var(--color-main);
+      transition: 0.5s ease;
+    }
   }
   @media (max-width: 700px) {
     min-width: 15.625rem;
