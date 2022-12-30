@@ -10,12 +10,12 @@ export const useOutClick = (callback: () => void, parametro: 1 | 2) => {
       const element = ref.current;
 
       if (parametro == 1) {
-        if (element.contains(target) && target.name != "password") {
+        if (target.name != "password") {
           callback();
         }
       }
       if (parametro == 2) {
-        if (element.contains(target) && target.tagName == "SECTION") {
+        if (target.tagName == "SECTION") {
           callback();
         }
       }
