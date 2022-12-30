@@ -1,11 +1,18 @@
 import { DivCheck } from "../Components/FormRegister";
 
+interface IPWDRequisiteProps {
+  capsLetterFlag: string;
+  numberFlag: string;
+  pwdLengthFlag: string;
+  specialCharFlag: string;
+}
+
 const PWDRequisite = ({
   capsLetterFlag,
   numberFlag,
   pwdLengthFlag,
   specialCharFlag,
-}) => {
+}: IPWDRequisiteProps) => {
   return (
     <DivCheck>
       <p className={capsLetterFlag}>Deve conter no mínimo 1 letra maiúscula</p>

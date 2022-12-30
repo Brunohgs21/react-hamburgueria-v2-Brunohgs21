@@ -1,16 +1,20 @@
 import { Li } from "./index";
 import { useContext } from "react";
-import { CartContext } from "./../../Context/CartContext";
+import { CartContext } from "../../Context/CartContext";
 
-const CartProduct = ({ item }) => {
+interface IProduct {
+  category: string;
+  id: number;
+  img: string;
+  name: string;
+  price: number;
+}
+interface ICartProductProps {
+  item: IProduct;
+}
+
+const CartProduct = ({ item }: ICartProductProps) => {
   const { remove } = useContext(CartContext);
-  // function remove() {
-  //   let filtro = cart.filter((value, index) => {
-  //     return value.name != item.name;
-  //   });
-
-  //   setCart(() => [...filtro]);
-  // }
 
   function removeItem() {
     remove(item);

@@ -1,14 +1,26 @@
-import { Cabecalho } from "./index.js";
+import { Cabecalho } from "./index";
 import logo from "../../Assets/logo.jpg";
-import Input from "../InputSearch/index.jsx";
+import Input from "../InputSearch/Input";
 import CartImg from "../../Assets/cart.png.png";
-import { CartContext } from "./../../Context/CartContext";
-import { useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
+import { Dispatch, SetStateAction, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-
 import Img from "../../Assets/close.png";
 
-const Header = ({ setFiltro, setOpenCart }) => {
+interface IProduct {
+  category: string;
+  id: number;
+  img: string;
+  name: string;
+  price: number;
+}
+
+interface IHeaderProps {
+  setFiltro: Dispatch<SetStateAction<IProduct[] | []>>;
+  setOpenCart: Dispatch<SetStateAction<boolean>>;
+}
+
+const Header = ({ setFiltro, setOpenCart }: IHeaderProps) => {
   const { cart } = useContext(CartContext);
   const navigate = useNavigate();
 
@@ -19,7 +31,7 @@ const Header = ({ setFiltro, setOpenCart }) => {
 
   return (
     <Cabecalho>
-      <img src={logo} alt="" />
+      <img className="logo" src={logo} alt="" />
       <div>
         <Input setFiltro={setFiltro} />
         <button className="openCart" onClick={() => setOpenCart(true)}>

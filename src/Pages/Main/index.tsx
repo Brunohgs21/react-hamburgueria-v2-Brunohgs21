@@ -1,12 +1,19 @@
-import Header from "../../Components/Header/index.jsx";
-import ProductsList from "../../Components/ProductsList/index.jsx";
-import Cart from "../../Components/Cart/index.jsx";
+import Header from "../../Components/Header/Header";
+import ProductsList from "../../Components/ProductsList/ProductList";
+import Cart from "../../Components/Cart/Cart";
 import { Div } from "../../index";
 import { useState } from "react";
+interface IProduct {
+  category: string;
+  id: number;
+  img: string;
+  name: string;
+  price: number;
+}
 
 const Main = () => {
   const [openCart, setOpenCart] = useState(false);
-  const [filtro, setFiltro] = useState();
+  const [filtro, setFiltro] = useState([] as IProduct[]);
 
   return (
     <>

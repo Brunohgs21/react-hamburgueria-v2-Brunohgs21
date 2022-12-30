@@ -19,7 +19,7 @@ export const Li = styled.li`
     font-size: 0.875rem;
     line-height: 1.5rem;
 
-    color: #333333;
+    color: var(--color-grey-dark);
 
     margin-left: 0.9375rem;
     margin-bottom: 0.3125rem;
@@ -32,7 +32,7 @@ export const Li = styled.li`
     font-size: 0.75rem;
     line-height: 1rem;
 
-    color: #828282;
+    color: var(--color-grey-3);
 
     margin-left: 0.9375rem;
   }
@@ -50,7 +50,7 @@ export const Li = styled.li`
     font-size: 0.75rem;
     line-height: 0.9375rem;
 
-    color: #bdbdbd;
+    color: var(--color-grey-btn);
     border: transparent;
   }
 `;

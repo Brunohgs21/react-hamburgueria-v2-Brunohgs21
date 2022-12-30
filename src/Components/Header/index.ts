@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import { Div } from "./../InputSearch/index";
 
 export const Cabecalho = styled.header`
   width: 100vw;
   height: 5rem;
-  background: #f5f5f5;
+  background: var(--color-grey-1);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,7 +15,7 @@ export const Cabecalho = styled.header`
     gap: 15px;
   }
 
-  img {
+  .logo {
     height: 2.3017rem;
     width: 9.9335rem;
 
@@ -31,21 +30,19 @@ export const Cabecalho = styled.header`
     width: 20px;
     height: 24px;
 
-    /* Green 2 */
-
-    background: #27ae60;
+    background: var(--color-main);
     border-radius: 7px;
     font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 900;
     font-size: 14px;
     line-height: 0px;
-    /* identical to box height, or 0% */
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    color: #ffffff;
+    color: var(--color-white);
   }
 
   .openCart {

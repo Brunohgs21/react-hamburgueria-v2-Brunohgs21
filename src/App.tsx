@@ -1,5 +1,3 @@
-import { react, useState, useEffect } from "react";
-import Main from "./Pages/Main/index.jsx";
 import RoutesMain from "./Routes/index.jsx";
 import Global from "./Styles/global";
 import { ToastContainer } from "react-toastify";

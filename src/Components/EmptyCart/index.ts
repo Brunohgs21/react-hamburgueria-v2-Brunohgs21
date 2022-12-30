@@ -18,7 +18,7 @@ export const Div = styled.div`
 
     text-align: center;
 
-    color: #333333;
+    color: var(--color-grey-dark);
   }
 
   .p2 {
@@ -30,6 +30,6 @@ export const Div = styled.div`
 
     text-align: center;
 
-    color: #828282;
+    color: var(--color-grey-3);
   }
 `;

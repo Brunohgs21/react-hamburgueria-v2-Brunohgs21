@@ -8,7 +8,7 @@ export const Div = styled.div`
   height: 13.9375rem;
   max-height: 37.5rem;
 
-  background: #f5f5f5;
+  background: var(--color-grey-1);
   border-radius: 0rem 0rem 0.3125rem 0.3125rem;
   header {
     display: flex;
@@ -19,7 +19,7 @@ export const Div = styled.div`
   .closeBtn {
     background-color: transparent;
     border: transparent;
-    color: #f5f5f5;
+    color: var(--color-grey-1);
   }
 
   ul {
@@ -29,7 +29,7 @@ export const Div = styled.div`
 
     display: flex;
 
-    background-color: #f5f5f5;
+    background-color: var(--color-grey-1);
     flex-direction: column;
     align-items: center;
     overflow: auto;
@@ -38,7 +38,7 @@ export const Div = styled.div`
     min-height: 12.5rem;
   }
 `;
-export const BackGround = styled.div`
+export const BackGround = styled.section`
   width: 100%;
   height: 100%;
   display: flex;
@@ -48,4 +48,5 @@ export const BackGround = styled.div`
   z-index: 1;
   top: 0;
   left: 0;
+  background-color: var(--color-back-modal);
 `;

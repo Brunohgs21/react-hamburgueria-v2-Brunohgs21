@@ -1,11 +1,19 @@
 import { useState, useContext } from "react";
-import { Li } from "./index.js";
-import { toast } from "react-toastify";
-import { ToastContainer } from "react-toastify";
+import { Li } from "./index";
 import "react-toastify/ReactToastify.css";
-import { CartContext } from "./../../Context/CartContext";
+import { CartContext } from "../../Context/CartContext";
+interface IProduct {
+  category: string;
+  id: number;
+  img: string;
+  name: string;
+  price: number;
+}
+interface IProductProps {
+  item: IProduct;
+}
 
-const Product = ({ item }) => {
+const Product = ({ item }: IProductProps) => {
   const { addToCartt } = useContext(CartContext);
 
   function addToCart() {
