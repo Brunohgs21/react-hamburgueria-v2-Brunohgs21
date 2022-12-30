@@ -1,4 +1,4 @@
-import { DivCheck } from "../Components/FormRegister";
+import { DivCheck } from "../Components/FormRegister/style";
 
 interface IPWDRequisiteProps {
   capsLetterFlag: string;

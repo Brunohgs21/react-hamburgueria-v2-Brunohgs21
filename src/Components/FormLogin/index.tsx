@@ -1,5 +1,5 @@
 import React from "react";
-import { DivForm, Link2 } from "../FormRegister/index";
+import { DivForm, Link2 } from "../FormRegister/style";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchemaLogin } from "../../Validation";

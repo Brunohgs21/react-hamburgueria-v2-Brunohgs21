@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link, DivForm } from "./index";
+import { Link, DivForm } from "./style";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchema } from "../../Validation";
