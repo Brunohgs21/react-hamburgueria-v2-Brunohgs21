@@ -3,7 +3,7 @@ import { Li } from "./index.js";
 import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/ReactToastify.css";
-import { CartContext } from "./../../Context/CartContext";
+import { CartContext } from "../../Context/CartContext";
 
 const Product = ({ item }) => {
   const { addToCartt } = useContext(CartContext);

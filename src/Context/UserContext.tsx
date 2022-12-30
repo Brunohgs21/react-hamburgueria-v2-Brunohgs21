@@ -3,46 +3,20 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { api } from "../Services/api";
 import { toast } from "react-toastify";
 import "react-toastify/ReactToastify.css";
+import {
+  IUserContext,
+  IUserContextProps,
+  IUserResponse,
+  IFood,
+  IUserLogin,
+  IUserRegister,
+} from ".";
 
-interface IUserContextProps {
-  children: React.ReactNode;
-}
-
-interface IUserLogin {
-  email: string;
-  password: string;
-}
-
-interface IUserRegister {
-  email: string;
-  password: string;
-  name: string;
-}
-interface IFood {
-  category: string;
-  id: number;
-  img: string;
-  name: string;
-  price: number;
-}
-
-interface IUserResponse {
-  id: string;
-  name: string;
-  email: string;
-}
-
-interface IUserContext {
-  // login: ;
-  // // user: {};
-  // loading: boolean;
-  // // registerUser: {};
-}
 export const UserContext = createContext({} as IUserContext);
 
 export const UserProvider = ({ children }: IUserContextProps) => {
-  const [user, setUser] = useState(null);
-  const [food, setFood] = useState<IFood[]>([]);
+  const [user, setUser] = useState<IUserResponse | null>(null);
+  const [food, setFood] = useState<IFood[] | null>(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
@@ -60,9 +34,9 @@ export const UserProvider = ({ children }: IUserContextProps) => {
         api.defaults.headers.common.authorization = `Bearer ${token}`;
         const { data } = await api.get("products");
         setFood(data);
-        setUser(data);
       } catch (error) {
         console.error(error);
+        setFood(null);
       } finally {
         setLoading(false);
       }
@@ -96,6 +70,7 @@ export const UserProvider = ({ children }: IUserContextProps) => {
       const toNavigate = location.state?.from?.pathname || "/dashboard";
 
       navigate(toNavigate, { replace: true });
+
       loadFood();
     } catch (error) {
       console.error(error);
@@ -118,7 +93,7 @@ export const UserProvider = ({ children }: IUserContextProps) => {
     }
   }
   return (
-    <UserContext.Provider value={{ login, loading, user, food, registerUser }}>
+    <UserContext.Provider value={{ login, loading, food, registerUser }}>
       {children}
     </UserContext.Provider>
   );

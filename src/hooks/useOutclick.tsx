@@ -1,11 +1,11 @@
 import React from "react";
 import { useRef, useEffect } from "react";
 
-export const useOutClick = (callback) => {
+export const useOutClick = (callback: () => void) => {
   const ref = useRef(null);
 
   useEffect(() => {
-    function modalOutClick(event) {
+    function modalOutClick(event: { target: any }) {
       const target = event.target;
       const element = ref.current;
 

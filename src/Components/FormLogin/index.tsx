@@ -1,20 +1,28 @@
 import React from "react";
-import { DivForm, Link2 } from "./../FormRegister/index";
+import { DivForm, Link2 } from "../FormRegister/index";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchemaLogin } from "../../Validation";
 import { useContext } from "react";
-import { UserContext } from "./../../Context/UserContext";
+import { UserContext } from "../../Context/UserContext";
 import { api } from "../../Services/api";
-
+interface IUserLogin {
+  email: string;
+  password: string;
+}
 const FormLogin = () => {
   const { login } = useContext(UserContext);
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+    reset,
+  } = useForm<IUserLogin>({
     resolver: yupResolver(formSchemaLogin),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
   });
 
   return (

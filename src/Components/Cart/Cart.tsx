@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { BackGround, Div } from "./index";
 import CartProduct from "../CartProduct/CartProduct";
 import EmptyCard from "../EmptyCart/EmptyCards";
@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 
 interface ICartProps {
-  setOpenCart: boolean;
+  setOpenCart: Dispatch<SetStateAction<boolean>>;
 }
 
 const Cart = ({ setOpenCart }: ICartProps) => {
@@ -22,7 +22,7 @@ const Cart = ({ setOpenCart }: ICartProps) => {
           </button>
         </header>
         <ul>
-          {cart.length > "0" ? (
+          {cart.length > 0 ? (
             cart.map((item) => <CartProduct item={item} />)
           ) : (
             <EmptyCard />
