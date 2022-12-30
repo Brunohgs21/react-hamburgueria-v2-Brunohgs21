@@ -52,5 +52,10 @@ export const Li = styled.li`
 
     color: var(--color-grey-btn);
     border: transparent;
+
+    &:hover {
+      color: var(--color-main);
+      transition: 0.5s ease;
+    }
   }
 `;

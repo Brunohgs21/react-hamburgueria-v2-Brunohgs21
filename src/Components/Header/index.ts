@@ -85,10 +85,11 @@ export const Cabecalho = styled.header`
     div {
       margin-left: 0.5rem;
       margin-right: 0.5rem;
+      gap: 5px;
     }
 
-    img {
-      margin: auto;
+    .logo {
+      margin-left: 0;
     }
     .logout {
       margin-right: 0;

@@ -42,6 +42,12 @@ export const Div = styled.div`
 
     color: var(--color-grey-3);
     margin-bottom: 0.5rem;
+
+    &:hover {
+      color: var(--color-white);
+      background-color: var(--color-main);
+      transition: 0.5s ease;
+    }
   }
 
   @media (max-width: 700px) {

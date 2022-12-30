@@ -5,12 +5,17 @@ export const Link = styled(LinkRouter)`
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
 
   text-decoration-line: underline;
 
   color: var(--color-grey-3);
+
+  &:hover {
+    color: var(--color-grey-dark);
+    transition: 0.5s ease;
+  }
 `;
 
 export const Div = styled.div`
@@ -34,7 +39,8 @@ export const DivForm = styled.div`
   display: flex;
   flex-direction: column;
   width: 500px;
-
+  color: var(--color-grey-4);
+  font-family: "Inter", sans-serif;
   background: var(--color-white);
 
   border: 2px solid var(--color-grey-1);
@@ -48,6 +54,7 @@ export const DivForm = styled.div`
     color: var(--color-grey-4);
     font-family: "Inter", sans-serif;
   }
+
   form {
     display: flex;
     flex-direction: column;
@@ -71,10 +78,6 @@ export const DivForm = styled.div`
     /* or 133% */
 
     color: var(--color-grey-dark);
-  }
-  .schemaText {
-    color: var(--color-grey-4);
-    font-family: "Inter", sans-serif;
   }
 
   label {

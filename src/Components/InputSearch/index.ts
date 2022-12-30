@@ -72,11 +72,16 @@ export const Div = styled.div`
     font-size: 1rem;
     line-height: 1.1875rem;
 
-    color: var(--color-grey-2);
+    color: var(--color-grey-3);
   }
 
   @media (max-width: 700px) {
     margin: auto;
     width: 80%;
+    button {
+      height: 2rem;
+      width: 4.5rem;
+    }
+    padding: 0rem 0.325rem 0rem 0.4375rem;
   }
 `;
