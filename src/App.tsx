@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/ReactToastify.css";
 import { UserProvider } from "./Context/UserContext.jsx";
 import { CartProvider } from "./Context/CartContext.jsx";
-import Global from "./Styles/global";
+import { Global } from "./Styles/global.js";
 
 function App() {
   return (
