@@ -1,5 +1,5 @@
 import RoutesMain from "./Routes/index.jsx";
-import Global from "./Styles/global";
+
 import { ToastContainer } from "react-toastify";
 import "react-toastify/ReactToastify.css";
 import { UserProvider } from "./Context/UserContext.jsx";
@@ -8,7 +8,6 @@ import { CartProvider } from "./Context/CartContext.jsx";
 function App() {
   return (
     <div className="App">
-      <Global />
       <UserProvider>
         <CartProvider>
           <RoutesMain />
