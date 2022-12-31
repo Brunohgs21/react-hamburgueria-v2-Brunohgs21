@@ -1,7 +1,7 @@
 import Header from "../../Components/Header/Header";
 import ProductsList from "../../Components/ProductsList/ProductList";
 import Cart from "../../Components/Cart/Cart";
-import { Div } from "../../index";
+import { Div } from "../..";
 import { useState } from "react";
 interface IProduct {
   category: string;
