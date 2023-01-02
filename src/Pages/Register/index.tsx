@@ -1,5 +1,5 @@
 import React from "react";
-import Img from "../../Assets/Component 1.png";
+import Img from "../../Assets/Component1.png";
 import FormRegister from "../../Components/FormRegister/FormRegister";
 import { Div } from "../../Components/FormRegister/style";
 
