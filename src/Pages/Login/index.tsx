@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FormLogin from "../../Components/FormLogin";
-import { Div } from "../../Components/FormRegister/style";
+import { Div } from "../../Components/FormRegister/style.js";
 import Img from "../../Assets/Component1.png";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../Services/api";
