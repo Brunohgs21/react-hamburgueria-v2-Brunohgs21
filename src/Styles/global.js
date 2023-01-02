@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export const Global = createGlobalStyle`
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Inter&family=Nunito&family=Roboto:wght@700&display=swap');
+
 *{
     padding: 0;
     margin: 0;
